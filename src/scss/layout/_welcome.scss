@@ -5,68 +5,114 @@ nav {
   background-color: lighten(black, 10%);
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
   padding: 1.5rem 0 1.5rem 0;
 
-  h2 {
-    margin: 0 5rem 0 0;
-    color: v.$blanco;
-    &:hover{
-      color: darkred;
-      cursor: pointer;
+  .logo{
+    a {
+      margin: 0 5rem 0 0;
+      color: v.$blanco;
+      font-size: 3rem;
+      text-transform: uppercase;
+
+      &:hover {
+        color: darkred;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .navegacion {
+    a{
+      color: v.$blanco;
+      &:hover {
+        color: darkred;
+        cursor: pointer;
+      }
+    }
+    ul {
+    list-style: none;
+      display: flex;
+      gap: 2rem;
+      font-size: 2rem;
+    }
+  }
+  @include m.max-desktop{
+    display: grid;
+    grid-template-columns: 100%;
+    .logo{
+      grid-row: 1/2;
+      text-align: center;
+      a{
+        margin: 0;
+
+      }
+    }
+  }
+
+  @media screen and (max-width: 698px){
+    .navegacion{
+      ul{
+        flex-direction: column;
+        text-align: center;
+      }
     }
   }
 }
 
-.contenido{
+.contenido {
   margin-top: 4rem;
   display: grid;
   grid-template-columns: 50% 50%;
-  @include m.max-desktop{
+  @include m.max-desktop {
     grid-template-columns: 100%;
   }
   column-gap: 2rem;
-  .contenido-izquerda_top{
+
+  .contenido-izquerda_top {
     display: flex;
     gap: 1rem;
-    img{
+
+    img {
       width: 13rem;
       border-radius: 1rem;
     }
 
   }
 
-  .contenido-izquerda_middle{
+  .contenido-izquerda_middle {
     margin: 10rem 0 10rem 0;
   }
 
-  .contenido-izquerda_bottom{
-    img{
+  .contenido-izquerda_bottom {
+    img {
       width: 80rem;
       height: 40rem;
       border-radius: 2rem;
       margin-bottom: 10rem;
-      @include m.max-desktop{
+      @include m.max-desktop {
         width: 100%;
       }
     }
   }
 }
 
-.contenido-derecha{
+.contenido-derecha {
   display: flex;
   flex-direction: column;
   gap: 10rem;
   align-items: flex-start;
   margin: 0 auto 0 auto;
-  .contenido-producto{
+
+  .contenido-producto {
     display: flex;
     align-items: center;
     width: 50rem;
     border-radius: 1rem;
     color: v.$blanco;
     justify-content: space-between;
-    img{
+
+    img {
       width: 5rem;
       fill: v.$blanco;
       margin-right: 2rem;
@@ -74,19 +120,20 @@ nav {
       border-left: solid white 1px;
 
 
-      &:hover{
+      &:hover {
         cursor: pointer;
 
       }
     }
-    h2{
+
+    h2 {
       margin: 0 0 0 1rem;
     }
 
     background-color: lighten(black, 10%)
   }
 
-  &:last-child{
+  &:last-child {
     margin-bottom: 10rem;
   }
 
